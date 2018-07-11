@@ -1,0 +1,8 @@
+org\test\ConnectToMongoDB.class
+org\test\SaveDocuments.class
+org\dev\ws\tu\controller\StudentController.class
+org\dev\ws\tu\service\StudentService.class
+org\dev\ws\tu\model\Course.class
+org\dev\ws\tu\main\StudentServiceApplication.class
+org\test\DBConn.class
+org\dev\ws\tu\model\Student.class
