@@ -11,7 +11,7 @@
   <artifactId>spring-ws</artifactId>
   <version>1.0-SNAPSHOT-RC-1.1</version>
   <name>spring-ws</name>
-  <url>http://www.example.com</url>
+  <url>http://www.ss.com</url>
   <packaging>war</packaging>
 
   <properties>
