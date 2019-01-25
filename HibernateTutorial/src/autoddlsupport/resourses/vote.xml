@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<class name="orm_support.association_ex.xml_based.Vote" table="vote" schema="system">
+    		<id name="vtid" column="vtid">
+    			<generator class="foreign">
+    				<param name="property">voter</param>
+    			</generator>
+    		</id>
+    		<property name="party_name" column="party_name" />
+    		<property name="cdate" column="cdate" />
+    		<one-to-one name="voter" class="orm_support.association_ex.xml_based.Voter" />
+    	</class>
+    </hibernate-mapping>

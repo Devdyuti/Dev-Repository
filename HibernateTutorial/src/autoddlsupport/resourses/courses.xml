@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<class name="orm_support.association_ex.xml_based.Courses" table="courses" schema="system">
+    		<id name="cid" column="cid"/>
+    		<property name="cname" column="cname"/>
+    		<property name="cfee" column="cfee"/>
+    		<set name="faculties" table="facultycourse" inverse="true">
+    			<key column="cid"/>
+    			<many-to-many class="orm_support.association_ex.xml_based.Faculty" column="fid"/>
+    		</set>
+    	</class>
+    </hibernate-mapping>

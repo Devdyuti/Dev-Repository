@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+   <hibernate-mapping>
+   	<class name="orm_support.inheritance_ex.table_per_subclass.Animal" table="animal" schema="system">
+   		<id name="id" />
+   		<property name="name" />
+   		<property name="age" />
+   		<joined-subclass name="orm_support.inheritance_ex.table_per_subclass.Dog" table="Dog" schema="system">
+   			<key column="id" />
+   			<property name="bark" />
+   		</joined-subclass>
+   		<joined-subclass name="orm_support.inheritance_ex.table_per_subclass.Cat" table="Cat" schema="system">
+   			<key column="id"/>
+   			<property name="miyau"/>
+   		</joined-subclass>
+   	</class>
+   </hibernate-mapping>

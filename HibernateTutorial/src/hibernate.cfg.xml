@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	<!-- Dialect class is used to convert hql ddl, dml etc queries to its database dependent queries. This is developed by database vendors -->
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521/XE</property>
+		<property name="hibernate.connection.username">system</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.pool_size">10</property>
+		
+	<!-- *Property is to AutoDDL support like[CREATE, ALTER, DELETE, DROP, RENAME]
+		Options are [create, update, validate, create-drop] 
+	-->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+	<!-- format-sql property provides Hibernat query message in a special format  
+	-->
+		<property name="format_sql">false</property>
+	<!-- For SessionFactoryLevel cache support 
+	-->	
+<!-- 	<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.EhCacheRegionFactory</property>
+		<property name="net.sf.ehcache.configurationResourceName">autoddlsupport.resourses/ehcache.xml</property> -->
+	<!-- Query Cache support -->
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.EhCacheRegionFactory</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		
+	
+	<!-- Mapping xml file
+	-->
+<!-- 	<mapping resource="autoddlsupport/resourses/student.xml"/>
+		<mapping resource="autoddlsupport/resourses/course.xml"/> -->
+			
+		<mapping class="org.dev.Customers"/> 
+		<mapping class="hql_support.Customers_new"/>
+		<mapping class="criteria.Employee" />
+		<mapping resource="autoddlsupport/resourses/employee007.xml"/>
+		<mapping resource="autoddlsupport/resourses/animal.xml"/>
+		<mapping resource="autoddlsupport/resourses/fruit.xml"/>
+		<mapping class="orm_support.inheritance_ex.annotation_based.Student"/>
+		<mapping class="orm_support.inheritance_ex.annotation_based.JavaStudent"/>
+		<mapping class="orm_support.inheritance_ex.annotation_based.DotNetStudent"/>
+		<mapping class="orm_support.inheritance_ex.annotation_based.ScallaStudent"/>
+		<mapping class="orm_support.inheritance_ex.annotation_based.table_per_subClass.Animal"/>
+		<mapping class="orm_support.inheritance_ex.annotation_based.table_per_subClass.Dog"/>
+		<mapping class="orm_support.inheritance_ex.annotation_based.table_per_subClass.Cat"/>
+		
+		<!-- Mapping actor.xml file to show HAS-A relationship(one-to-many) between 2 Entity Actor and Movies -->
+		<mapping resource="autoddlsupport/resourses/actor.xml"/>
+		<mapping resource="autoddlsupport/resourses/movie.xml"/>
+		<!-- @AnnotationBased -->
+		<mapping class="orm_support.association_ex.annotation_based.Actor"/>
+		<mapping class="orm_support.association_ex.annotation_based.Movie"/>
+		
+		<!-- Mapping actor.xml file to show HAS-A relationship(Many-to-one) between 2 Entity Actor and Movies -->
+		<mapping resource="autoddlsupport/resourses/actor_many_to_1.xml"/>
+		<mapping resource="autoddlsupport/resourses/movie_many_to_1.xml"/>
+		
+		<!-- Mapping voter.xml, vote.xml file to show HAS-A relationship(One-to-one) between 2 Entity Voter and Vote -->
+		<mapping resource="autoddlsupport/resourses/voter.xml"/>
+		<mapping resource="autoddlsupport/resourses/vote.xml"/>
+		
+		<!-- Mapping Faculty.xml & Course.xml file to show HAS-A relationship(Many-to-Many) between 2 Entity Faculty and Courses -->
+		<mapping resource="autoddlsupport/resourses/Faculty.xml"/>
+		<mapping resource="autoddlsupport/resourses/Courses.xml"/>
+		<!-- Mapping a bean class "Friend" this is an Example showing validation in hibernate-->
+		<mapping class="validation_support.Friend" />
+		
+	</session-factory>
+</hibernate-configuration>

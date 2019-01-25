@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<class name="autoddlsupport.bean.Course" table="course" schema="system">
+    		<id name="id" column="cid"/>
+    		<property name="name" column="cname"/>
+    		<property name="fee" column="cfee"/>
+    	</class>
+    </hibernate-mapping>

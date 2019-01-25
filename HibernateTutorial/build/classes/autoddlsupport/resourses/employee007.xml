@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<class name="orm_support.inheritance_ex.Employee007" table="employee007" schema="system">
+    		<id name="id" column="id"/>    		
+    		<discriminator column="etype" />	
+    			<property name="name" column="name"/>
+    			<property name="email" column="email"/>
+    			<property name="salary" column="salary"/>	
+    		<subclass name="orm_support.inheritance_ex.SoftwareEmployee" discriminator-value="se">
+    			<property name="tool" />
+    		</subclass>	
+    		<subclass name="orm_support.inheritance_ex.HardwareEmployee" discriminator-value="he">
+    			<property name="wh" />
+    		</subclass>
+    		<subclass name="orm_support.inheritance_ex.AdminEmployee" discriminator-value="admin">
+    			<property name="branch" />
+    		</subclass>
+    	</class>
+    </hibernate-mapping>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<class name="orm_support.association_ex.xml_based.Actor_M_to_1" table="actor_m_to_1" schema="system">
+    		<id name="aid" column="aid"/>
+    		<property name="actorname" column="actorname" />
+    	</class>
+    </hibernate-mapping>
